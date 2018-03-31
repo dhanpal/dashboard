@@ -19,7 +19,7 @@ import com.kramtey.model.Dashboard;
 import com.kramtey.repository.DashboardRepository;
 
 @RestController
-@RequestMapping("/api/Notices")
+@RequestMapping("/Notices")
 public class NoticeController {
 	private final String CATEGORY = "NOTICES";
 	@Autowired

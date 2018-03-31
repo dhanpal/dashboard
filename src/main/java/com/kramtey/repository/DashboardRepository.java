@@ -10,10 +10,10 @@ import com.kramtey.model.Dashboard;
 
 public interface DashboardRepository extends JpaRepository<Dashboard, Long>{
 
-	@Query("SELECT p FROM Person p WHERE LOWER(p.lastName) = LOWER(:lastName)")
-	public List<Dashboard> findAllByCategory(@Param("lastName") String category);
+	@Query("SELECT p FROM Dashboard p WHERE LOWER(p.objectType) = LOWER(:objectType)")
+	public List<Dashboard> findAllByCategory(@Param("objectType") String category);
 	
-	@Query("SELECT p FROM Person p WHERE LOWER(p.lastName) = LOWER(:lastName)")
-	public Dashboard findOneByCategory(String category, Long id);
+	@Query("SELECT p FROM Dashboard p WHERE LOWER(p.objectType) = LOWER(:objectType) AND (p.id) = (:id)")
+	public Dashboard findOneByCategory(@Param("objectType") String category, @Param("id") Long id);
 	
 }

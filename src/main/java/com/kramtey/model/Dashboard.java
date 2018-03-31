@@ -28,7 +28,7 @@ import lombok.ToString;
 import lombok.experimental.Accessors;
 
 @Entity
-@Table(name = "dashboard")
+@Table(name = "Dashboard")
 //@EntityListeners(AuditingEntityListener.class)
 @NoArgsConstructor
 @ToString

@@ -21,6 +21,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.Setter;
 import lombok.ToString;
@@ -28,34 +29,27 @@ import lombok.experimental.Accessors;
 
 @Entity
 @Table(name = "dashboard")
-@EntityListeners(AuditingEntityListener.class)
+//@EntityListeners(AuditingEntityListener.class)
+@NoArgsConstructor
 @ToString
-@AllArgsConstructor
-@EqualsAndHashCode
-@Accessors(fluent = true)
-@Getter
-@Setter
+//@EqualsAndHashCode
 public class Dashboard {
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(nullable = false)
-	@NonNull
+	@Getter @Setter
 	private Long id;
 	
-	@NotBlank
-	@Column(nullable = false)
+	@Getter @Setter
 	private String objectType;
 	
-	@NotBlank
-	@Column(nullable = false)
+	@Getter @Setter
 	private String rawData;
 	
-	@NotBlank
-	@Column(nullable = false)
+	@Getter @Setter
 	private int userId;
 	
-	@Column(nullable = false)
+	@Getter @Setter
     @Temporal(TemporalType.TIMESTAMP)
     @LastModifiedDate
 	private Date recordDate;

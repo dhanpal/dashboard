@@ -19,19 +19,20 @@ import com.kramtey.model.Dashboard;
 import com.kramtey.repository.DashboardRepository;
 
 @RestController
-@RequestMapping("/api/dashboard")
-public class DashboardController {
+@RequestMapping("/api/Notices")
+public class NoticeController {
+	private final String CATEGORY = "NOTICES";
 	@Autowired
 	DashboardRepository dashboardRepository;
-
+	
 	@GetMapping("/")
-	public List<Dashboard> getAllDashboards() {
-		return dashboardRepository.findAll();
+	public List<Dashboard> getAllNotices() {
+		return dashboardRepository.findAllByCategory(CATEGORY);
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<Dashboard> getDashboardById(@PathVariable(value = "id") Long id) {
-		Dashboard dashboard = dashboardRepository.findOne(id);
+	public ResponseEntity<Dashboard> getNoticedById(@PathVariable(value = "id") Long id) {
+		Dashboard dashboard = dashboardRepository.findOneByCategory(CATEGORY, id);
 		if(dashboard == null) {
 			return ResponseEntity.notFound().build();
 		}

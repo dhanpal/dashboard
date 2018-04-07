@@ -55,7 +55,16 @@
 			<version>1.16.20</version>
 			<scope>provided</scope>
 		</dependency>
-
+		<!-- Add Hikari Connection Pooling support -->
+		<dependency>
+			<groupId>com.zaxxer</groupId>
+			<artifactId>HikariCP</artifactId>
+		</dependency>
+		<dependency>
+    		<groupId>org.apache.commons</groupId>
+    		<artifactId>commons-lang3</artifactId>
+    		<version>3.5</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>

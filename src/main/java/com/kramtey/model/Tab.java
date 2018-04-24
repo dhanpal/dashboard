@@ -1,16 +1,12 @@
 package com.kramtey.model;
 
-import java.util.Date;
+import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-
-import org.springframework.data.annotation.LastModifiedDate;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -21,25 +17,25 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Table(name = "Dashboard")
+@Table(name="Horizontaltabs")
 @NoArgsConstructor
 @ToString
 @JsonInclude(Include.NON_NULL)
-public class Dashboard {
-	
+public class Tab implements Serializable{
+
 	@Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy= GenerationType.AUTO)
 	@Getter @Setter
 	private Long id;
 	
 	@Getter @Setter
-	private User user;
+	private String tabName;
 	
 	@Getter @Setter
-	private Tab tab;
+	private String tabType;
 	
-	@Getter @Setter
-    @Temporal(TemporalType.TIMESTAMP)
-    @LastModifiedDate
-	private Date recordDate;
+	private enum TabTypes{
+		HORIZONTAL,
+		VERTICAL
+	}
 }

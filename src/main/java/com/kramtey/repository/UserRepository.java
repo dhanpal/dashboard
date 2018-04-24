@@ -8,6 +8,7 @@ import com.kramtey.model.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
-    User findByName(String name);
-
+//    User findByName(String name);
+//
+//    User findById(Long id);
 }

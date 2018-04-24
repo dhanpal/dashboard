@@ -12,14 +12,14 @@ public class UserServiceImpl implements UserService{
 	@Autowired
 	UserRepository userRepository;
 	
-//	@Override
-//	public User findById(Long id) {
-//		return userRepository.findById(id);
-//	}
-//
-//	@Override
-//	public void saveUser(User user) {
-//		userRepository.save(user);
-//	}
+	@Override
+	public User findById(Long id) {
+		return userRepository.findById(id);
+	}
+
+	@Override
+	public void saveUser(User user) {
+		userRepository.save(user);
+	}
 	
 }

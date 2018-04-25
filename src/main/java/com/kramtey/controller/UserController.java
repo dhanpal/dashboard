@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.kramtey.model.User;
+import com.kramtey.response.UserDetailsResponse;
 import com.kramtey.service.UserServiceImpl;
 
 @RestController
@@ -18,9 +19,14 @@ public class UserController {
 	@Autowired
 	UserServiceImpl userServiceImpl;
 	
-	@GetMapping("/{id}")
-	User getUser(@PathVariable Long id) {
-		return userServiceImpl.findById(id);
+	@GetMapping("/{userId}")
+	User getUser(@PathVariable Long userId) {
+		return userServiceImpl.findByUserId(userId);
+	}
+	
+	@GetMapping("/{userDetails}")
+	UserDetailsResponse getUserDetails(@PathVariable Long userId) {
+		return userServiceImpl.findUserDetails(userId);
 	}
 	
 	@PostMapping

@@ -11,33 +11,29 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
 @Entity
 @Table(name="User")
 @NoArgsConstructor
-@ToString
+@Data
 @JsonInclude(Include.NON_NULL)
 public class User implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy= GenerationType.AUTO)
-	@Getter @Setter
-	private Long id;
+	private Long userId;
 	
-	@Getter @Setter
-	private String username;
+	private String userName;
 	
-	@Getter @Setter
 	private String password;
 	
-	@Getter @Setter
-	private String firstname;
+	private String firstName;
 	
-	@Getter @Setter
-	private String lastname;
-
+	private String lastName;
+	
+	private Long menuId;
+	
+	private Long subMenuId;
 }

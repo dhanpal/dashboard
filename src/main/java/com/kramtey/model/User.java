@@ -23,6 +23,8 @@ public class User implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy= GenerationType.AUTO)
+	private Long id;
+	
 	private Long userId;
 	
 	private String userName;

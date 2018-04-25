@@ -19,14 +19,9 @@ public class UserController {
 	@Autowired
 	UserServiceImpl userServiceImpl;
 	
-	@GetMapping("/{userId}")
-	User getUser(@PathVariable Long userId) {
-		return userServiceImpl.findByUserId(userId);
-	}
-	
-	@GetMapping("/{userDetails}")
-	UserDetailsResponse getUserDetails(@PathVariable Long userId) {
-		return userServiceImpl.findUserDetails(userId);
+	@GetMapping("/{id}")
+	User getUser(@PathVariable Long id) {
+		return userServiceImpl.findById(id);
 	}
 	
 	@PostMapping

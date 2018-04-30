@@ -12,11 +12,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name="Submenu")
-@NoArgsConstructor
 @Data
 @JsonInclude(Include.NON_NULL)
 public class Submenu implements Serializable{

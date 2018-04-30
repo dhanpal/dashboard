@@ -1,6 +1,7 @@
 package com.kramtey.response;
 
 import java.util.List;
+import java.util.Map;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -15,8 +16,6 @@ import lombok.Data;
 public class UserDetailsResponse {
 	
 	private User user;
-
-	private List<Menu> menu;
 	
-	private List<Submenu> submenu;
+	private Map<Menu, List<Submenu>> menuMap;
 }

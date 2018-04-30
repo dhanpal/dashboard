@@ -1,6 +1,5 @@
 package com.kramtey.util;
 
-
 public class CustomErrorType {
 
     private String errorMessage;

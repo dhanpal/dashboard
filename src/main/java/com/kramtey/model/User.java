@@ -12,11 +12,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name="User")
-@NoArgsConstructor
 @Data
 @JsonInclude(Include.NON_NULL)
 public class User implements Serializable{
@@ -25,7 +23,7 @@ public class User implements Serializable{
 	@GeneratedValue(strategy= GenerationType.AUTO)
 	private Long id;
 	
-	private Long userId;
+	private String userId;
 	
 	private String userName;
 	
@@ -37,5 +35,5 @@ public class User implements Serializable{
 	
 	private Long menuId;
 	
-	private Long subMenuId;
+//	private Long subMenuId;
 }

@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.kramtey.model.User;
-import com.kramtey.response.UserDetailsResponse;
 import com.kramtey.service.UserServiceImpl;
 
 @RestController

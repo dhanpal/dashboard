@@ -10,11 +10,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "Menu")
-@NoArgsConstructor
 @Data
 @JsonInclude(Include.NON_NULL)
 public class Menu {
@@ -24,4 +22,6 @@ public class Menu {
 	private Long menuId;
 	
 	private String menuName;
+	
+	private Long submenuId;
 }
